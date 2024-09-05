@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Go Rest API</title>
+    <meta name="description" content="Desafio 4 do curso de Go da dio.me">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .route {
+            color: black;
+            font-weight: bold;
+            font-size: medium;
+        }
+
+        .parameters {
+            color: red;
+            font-weight: bold;
+            font-size: small;
+        }
+
+        .code {
+            color: black;
+            font-weight: bold;
+            font-size: smaller;
+        }
+
+        .description {
+            color: green;
+            font-weight: bold;
+            font-size: small;
+        }
+
+        ul li {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <h1>Desafio 4 do curso de Go da dio.me</h1>
+
+    <h3>API de catálogo de bolos e votações</h3>
+
+    <ul>
+        <li>
+            <span class="route">GET: /api/v1/cakes</span>
+            <p class="description">
+                <i>Retorna uma listagem com os dados de todos os bolos</i>
+            </p>
+        </li>
+        <li>
+            <span class="route">GET: /api/v1/cakes/{id}</span>
+            <p class="parameters">
+                <i>Parametros da Requisição</i>
+                <br />
+                <i>id: identificação do bolo</i>
+            </p>
+            <p class="description">
+                <i>Retorna os dados de um bolo específico</i>
+            </p>
+        </li>
+        <li>
+            <span class="route">POST: /api/v1/cakes</span>
+            <p class="parameters">
+                <i>Corpo da Requisição</i>
+                <br />
+                <i>Formato: application/json</i>
+            </p>
+            <p class="code">
+                {<br />
+                &nbsp; &nbsp; "name": "Plum Cake",<br />
+                &nbsp; &nbsp; "picture": "4572.jpg",<br />
+                &nbsp; &nbsp; "category": "fruit_cake",<br />
+                &nbsp; &nbsp; "comments": 0,<br />
+                &nbsp; &nbsp; "upvotes": 2<br />
+                }<br />
+            </p>
+            <p class="description">
+                <i>Inclui os dados de um novo bolo</i>
+            </p>
+        </li>
+        <li>
+            <span class="route">PATCH: /api/v1/cakes/{id}</span>
+            <p class="parameters">
+                <i>Parametros da Requisição</i>
+                <br />
+                <i>id: identificação do bolo</i>
+                <br /><br />
+                <i>Corpo da Requisição</i>
+                <br />
+                <i>Formato: application/json</i>
+            </p>
+            <p class="code">
+                {<br />
+                &nbsp; &nbsp; "comments": 0,<br />
+                &nbsp; &nbsp; "upvotes": 2<br />
+                }<br />
+            </p>
+            <p class="description">
+                <i>Atualiza algumas informações de um bolo existente</i>
+            </p>
+        </li>
+        <li>
+            <span class="route">PUT: /api/v1/cakes/{id}</span>
+            <p class="parameters">
+                <i>Parametros da Requisição</i>
+                <br />
+                <i>id: identificação do bolo</i>
+                <br /><br />
+                <i>Corpo da Requisição</i>
+                <br />
+                <i>Formato: application/json</i>
+            </p>
+            <p class="code">
+                {<br />
+                &nbsp; &nbsp; "name": "Plum Fuit Cake",<br />
+                &nbsp; &nbsp; "picture": "4572.png",<br />
+                &nbsp; &nbsp; "category": "fruit_cake",<br />
+                &nbsp; &nbsp; "comments": 1,<br />
+                &nbsp; &nbsp; "upvotes": 4<br />
+                }<br />
+            </p>
+            <p class="description">
+                <i>Atualiza todas as informações de um bolo existente</i>
+            </p>
+        </li>
+        <li>
+            <span class="route">DELETE: /api/v1/cakes/{id}</span>
+            <p class="parameters">
+                <i>Parametros da Requisição</i>
+                <br />
+                <i>id: identificação do bolo</i>
+            </p>
+            <p class="description">
+                <i>Exclui os dados de um bolo específico</i>
+            </p>
+        </li>
+    </ul>
+
+</body>
+
+</html>
